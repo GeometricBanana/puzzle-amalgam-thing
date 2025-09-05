@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://c3qe18mywm7pl"]
+
+[ext_resource type="Script" uid="uid://0vufvimcdgt3" path="res://level_editor.gd" id="1_ky7rj"]
+[ext_resource type="Texture2D" uid="uid://iu4i3rbfapyr" path="res://baba_0_1.png" id="2_bo55o"]
+[ext_resource type="Texture2D" uid="uid://g6mpn7h266yi" path="res://baba_0_2.png" id="3_jgcvv"]
+[ext_resource type="Texture2D" uid="uid://5b12glin3b6f" path="res://baba_0_3.png" id="4_vimhp"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_n8bn7"]
+frames = 3
+speed_scale = 6.0
+frame_0/texture = ExtResource("2_bo55o")
+frame_1/texture = ExtResource("3_jgcvv")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("4_vimhp")
+frame_2/duration = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_bo55o"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ky7rj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(114, 443)
+scale = Vector2(9.33142, 9.33142)
+texture = SubResource("AnimatedTexture_n8bn7")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+position = Vector2(113, 128)
+scale = Vector2(87.5, 87.5)
+mesh = SubResource("SphereMesh_bo55o")
